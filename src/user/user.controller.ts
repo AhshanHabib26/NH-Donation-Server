@@ -1,15 +1,24 @@
 import { Request, Response } from "express";
-import { userService } from "./user.services";
-
+import { User } from "./user.model";
 
 const createUser = async (req: Request, res: Response) => {
-  const user = await userService.createUserService(req.body);
+  const { name, email, password } = req.body;
 
+  const isUserExists = await User.findOne({ email });
+
+  if (isUserExists) {
+    return res.status(401).json({
+      sucess: false,
+      message: "User Already Exists",
+    });
+  }
+
+  const user = await User.create({ name, email, password });
 
   res.status(201).json({
     success: true,
-    message: "User Cretaed Successfully",
-    data: user,
+    message: "User Created Successfully",
+    data: null,
   });
 };
 
