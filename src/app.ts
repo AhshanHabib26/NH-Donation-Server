@@ -3,6 +3,7 @@ const app = express();
 import cors from "cors";
 import userHandler from "./user/user.router";
 import clotheHandler from "./clothes/clothes.router";
+import clothesDataHandler from "./newClothesData/newClotheData.router";
 
 // Middleware
 app.use(express.json());
@@ -14,5 +15,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", userHandler);
 app.use("/api/clothes", clotheHandler);
+app.use("/api/clothes-data", clothesDataHandler);
+
 
 export default app;

@@ -12,7 +12,7 @@ const createClothe = async (req: Request, res: Response) => {
 };
 
 const getAllClothes = async (req: Request, res: Response) => {
-  const result = await Clothe.find({ isDeleted: { $ne: true } });
+  const result = await Clothe.find({ isDeleted: { $ne: true } }).sort({createdAt: -1});
   res.status(201).json({
     success: true,
     message: "All Clothes retrive successfully!",
