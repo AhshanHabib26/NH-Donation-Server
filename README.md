@@ -58,3 +58,16 @@
   - API ENDPOINT: `baseUrl/api/clothes-data`
   - Usage Example: `localhost:5000/api/clothes-data`
 
+
+## User With Testimonial Management:
+
+- For Cretaing Testimonial:
+  - METHOD: POST
+  - API ENDPOINT: `baseUrl/api/testimonial`
+  - Usage Example: `localhost:5000/api/testimonial`
+
+- For Getting All Testimonial:
+  - METHOD: GET
+  - API ENDPOINT: `baseUrl/api/testimonial`
+  - Usage Example: `localhost:5000/api/testimonial`
+
